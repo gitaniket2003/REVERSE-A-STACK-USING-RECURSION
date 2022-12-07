@@ -1,0 +1,35 @@
+void insertAtBottom(stack<int> &s, int element) {
+    //basecase
+    if(s.empty()) {
+        s.push(element);
+      	return ;
+    }
+    
+    int num = s.top();
+    s.pop();
+    
+    //recursive call
+    insertAtBottom(s, element);
+    
+    s.push(num);
+}
+
+class Solution{
+public:
+    void Reverse(stack<int> &St){
+        	//base case
+    if(St.empty()) {
+        return ;
+    }
+    
+    int num = St.top();
+    St.pop();
+    
+    //recursive call
+    Reverse(St);
+    
+    insertAtBottom(St,num);
+}
+        
+    
+};
